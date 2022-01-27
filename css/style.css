@@ -38,6 +38,7 @@ html::-webkit-scrollbar-thumb {
   background: #f0fdfa;
   color: #0eb582;
   cursor: pointer;
+  text-transform: capitalize;
 }
 
 .btn:hover {
@@ -124,7 +125,7 @@ html::-webkit-scrollbar-thumb {
 .accout-form {
   position: fixed;
   top: 0;
-  right: 0;
+  right: -105%;
   width: 35rem;
   background: #fff;
   display: -webkit-box;
@@ -139,10 +140,15 @@ html::-webkit-scrollbar-thumb {
       -ms-flex-pack: center;
           justify-content: center;
   height: 100%;
-  -webkit-box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.8);
-          box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.8);
   z-index: 1200;
   padding: 2rem;
+  text-align: center;
+}
+
+.accout-form.active {
+  right: 0;
+  -webkit-box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.8);
+          box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.8);
 }
 
 .accout-form #close-form {
@@ -163,6 +169,11 @@ html::-webkit-scrollbar-thumb {
   border: 0.1rem solid #0eb582;
   padding: 2rem;
   text-align: center;
+  display: none;
+}
+
+.accout-form form.active {
+  display: block;
 }
 
 .accout-form form h3 {
@@ -206,6 +217,19 @@ html::-webkit-scrollbar-thumb {
 .accout-form form .flex a:hover {
   text-decoration: underline;
   color: #0eb582;
+}
+
+.accout-form form .btn {
+  width: 100%;
+}
+
+.accout-form .buttons .btn {
+  margin: 0 0.5rem;
+}
+
+.accout-form .buttons .btn.active {
+  background: #0eb582;
+  color: #fff;
 }
 
 @media (max-width: 1200px) {

@@ -47,20 +47,21 @@ html {
     background: $green;
   }
 }
-.btn{
-    display: inline-block;
-    margin-top:1rem;
-    padding: 1rem 3rem;
-    font-size: 1.8rem;
-    border: $border;
-    background: $light-green;
-    color: $green;
-    cursor: pointer;
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  font-size: 1.8rem;
+  border: $border;
+  background: $light-green;
+  color: $green;
+  cursor: pointer;
+  text-transform: capitalize;
 
-    &:hover{
-        background:$green;
-        color: $white;
-    }
+  &:hover {
+    background: $green;
+    color: $white;
+  }
 }
 
 .header {
@@ -126,7 +127,7 @@ html {
 .accout-form {
   position: fixed;
   top: 0;
-  right: 0;
+  right: -105%;
   width: 35rem;
   background: $white;
   display: flex;
@@ -134,9 +135,15 @@ html {
   gap: 2rem;
   justify-content: center;
   height: 100%;
-  box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.8);
   z-index: 1200;
   padding: 2rem;
+  text-align: center;
+
+  &.active {
+    right: 0;
+    box-shadow: 0 0 0 100vw rgba(0, 0, 0, 0.8);
+
+  }
 
   #close-form {
     position: absolute;
@@ -154,6 +161,11 @@ html {
     border: $border;
     padding: 2rem;
     text-align: center;
+    display:none;
+
+    &.active{
+      display: block
+    }
 
     h3 {
       @include titleText(2.5rem);
@@ -189,6 +201,17 @@ html {
           color: $green;
         }
       }
+    }
+    .btn {
+      width: 100%;
+    }
+  }
+  .buttons .btn {
+    margin: 0 0.5rem;
+
+    &.active {
+      background: $green;
+      color: $white;
     }
   }
 }

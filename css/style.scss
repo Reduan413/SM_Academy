@@ -9,6 +9,10 @@
   text-decoration: none;
   transition: all 0.2s linear;
 }
+
+img{
+  user-select: none;
+}
 $green: #0eb582;
 $light-green: #f0fdfa;
 $light-color: #777;
@@ -54,7 +58,7 @@ section {
 
 .heading {
   text-align: center;
-  margin-bottom:3rem;
+  margin-bottom: 3rem;
   @include titleText(3.5rem);
 }
 
@@ -226,25 +230,25 @@ section {
   }
 }
 
-.home{
-  padding:0;
+.home {
+  padding: 0;
 
-  .slide{
-    display:flex;
-    align-items:center;
-    height:60rem;
+  .slide {
+    display: flex;
+    align-items: center;
+    height: 60rem;
     background-size: cover !important;
     background-position: center !important;
 
-    .content{
-      width:50rem;
+    .content {
+      width: 50rem;
 
-      h3{
+      h3 {
         @include titleText(5.5rem);
         color: $white;
       }
 
-      p{
+      p {
         @include graphText(1.6rem);
         color: $light-white;
         padding: 1rem 0;
@@ -256,48 +260,89 @@ section {
   background: $green;
 }
 
-.subjects{
-
-  .box-container{
+.subjects {
+  .box-container {
     @include grid(16rem);
 
-    .box{
-      padding:3rem 2rem;
-      text-align:center;
+    .box {
+      padding: 3rem 2rem;
+      text-align: center;
       border: $border;
       background: $light-green;
       cursor: pointer;
 
-      &:hover{
-        background:$green;
+      &:hover {
+        background: $green;
 
-        h3{
+        h3 {
           color: $white;
         }
-        p{
+        p {
           color: $light-white;
         }
       }
 
-      img{
-        height:10rem;
-        margin-bottom:.7rem;
+      img {
+        height: 10rem;
+        margin-bottom: 0.7rem;
       }
-      h3{
+      h3 {
         @include titleText(1.7rem);
-        padding:.5rem 0;
-
+        padding: 0.5rem 0;
       }
-      p{
+      p {
         @include graphText(1.5rem);
       }
     }
   }
 }
 
+.home-courses {
+  .slide {
+    text-align: center;
+    position: relative;
+    width: 30rem;
+    background: $light-green;
+    overflow: hidden;
+    
+    &:hover .content{
+      bottom: 0;
+    }
 
+    .image {
+      padding: 2rem;
 
+      img {
+        width: 100%;
+        margin-bottom: 1.5rem;
+      }
+      h3 {
+        @include titleText(2rem);
+      }
+    }
+    .content {
+      position: absolute;
+      bottom: -100%;
+      right: 0;
+      left: 0;
+      background: $green;
+      padding: 2rem 3rem;
 
+      h3 {
+        @include titleText(2rem);
+        color: $white;
+      }
+      p {
+        padding: 1rem 0;
+        @include graphText(1.5rem);
+        color: $light-white;
+      }
+      .btn:hover{
+        background:$black
+      }
+    }
+  }
+}
 
 .footer {
   background: $light-green;
@@ -423,15 +468,15 @@ section {
       }
     }
   }
-  .home .slide .content h3{
-    font-size:3rem;
+  .home .slide .content h3 {
+    font-size: 3rem;
   }
 }
 @media (max-width: 450px) {
   html {
     font-size: 50%;
   }
-  .heading{
-    font-size:3rem;
+  .heading {
+    font-size: 3rem;
   }
 }

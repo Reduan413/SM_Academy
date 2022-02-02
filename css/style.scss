@@ -56,6 +56,28 @@ section {
   padding: 5rem 10%;
 }
 
+.heading-link{
+  text-align: center;
+  background: url(../images/heading-bg.jpg) no-repeat;
+  background-size:cover;
+  background-position: center;
+
+  h3{
+    @include titleText(4rem);
+  }
+
+  p{
+    @include titleText(2rem);
+
+    a{
+      color: $green;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
 .heading {
   text-align: center;
   margin-bottom: 3rem;
@@ -344,6 +366,61 @@ section {
   }
 }
 
+.about{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+
+  .image{
+    flex: 1 1 40rem;
+
+    img{
+      width: 100%;
+    }
+  }
+  .content{
+    flex: 1 1 40rem;
+
+    .about-title{
+      @include titleText(3rem);
+    }
+    p{
+      @include graphText(1.5rem);
+      padding:1rem 0;
+      text-align:justify;
+    }
+    .icons-container{
+      margin-top: 1rem;
+      @include grid(16rem);
+
+      .icons{
+        text-align:center;
+        border:$border;
+        background: $light-green;
+        padding:3rem 2rem;
+
+        img{
+          height: 5rem;
+          margin-bottom: .5rem;
+        }
+        h3{
+          padding: .5rem 0;
+          @include titleText(3rem);
+        }
+        span{
+          @include graphText(1.5rem);
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
 .footer {
   background: $light-green;
 
@@ -478,5 +555,8 @@ section {
   }
   .heading {
     font-size: 3rem;
+  }
+  .about .content .about-title{
+    font-size: 4rem;
   }
 }
